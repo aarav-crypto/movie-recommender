@@ -7,9 +7,10 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-900 text-white">
       <Navbar />
       <main>{children}</main>
+      {/* Footer Section - Simplified to remove potentially broken links */}
       <footer className="mt-16 border-t border-gray-800 py-8">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
@@ -28,13 +29,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   </a>
                 </li>
                 <li>
-                  <a href="/movies" className="text-sm text-gray-300 hover:text-white">
-                    Movies
-                  </a>
-                </li>
-                <li>
-                  <a href="/my-list" className="text-sm text-gray-300 hover:text-white">
-                    My List
+                  <a href="/search" className="text-sm text-gray-300 hover:text-white">
+                    Search
                   </a>
                 </li>
               </ul>
@@ -47,25 +43,18 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     Profile
                   </a>
                 </li>
-                <li>
-                  <a href="/settings" className="text-sm text-gray-300 hover:text-white">
-                    Settings
-                  </a>
-                </li>
+                {/* Removed Settings link */}
               </ul>
             </div>
             <div>
               <h4 className="text-sm font-semibold uppercase text-gray-400">Legal</h4>
               <ul className="mt-4 space-y-2">
+                {/* Removed Privacy and Terms links */}
                 <li>
-                  <a href="/privacy" className="text-sm text-gray-300 hover:text-white">
-                    Privacy Policy
-                  </a>
+                  <span className="text-sm text-gray-500">Privacy Policy (TBD)</span>
                 </li>
                 <li>
-                  <a href="/terms" className="text-sm text-gray-300 hover:text-white">
-                    Terms of Service
-                  </a>
+                  <span className="text-sm text-gray-500">Terms of Service (TBD)</span>
                 </li>
               </ul>
             </div>
@@ -82,3 +71,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 };
 
 export default Layout;
+
